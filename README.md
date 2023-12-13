@@ -23,6 +23,9 @@ get started:
 ```shell
 composer install
 
+# if you haven't done it yourself
+php artisan key:generate
+
 php artisan migrate
 php artisan db:seed
 php artisan storage:link
