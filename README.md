@@ -21,15 +21,18 @@ When you've got the repo cloned locally, and configured your `.env` - including 
 get started:
 
 ```shell
+# get the dependencies
 composer install
 
 # if you haven't done it yourself
 php artisan key:generate
 
+# set up the eat.me database and data
 php artisan migrate
 php artisan db:seed
 php artisan storage:link
 
+# set up npm
 npm install
 npm run dev
 ```
