@@ -1,0 +1,230 @@
+title: Donuts
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              instructions_position: above
+              listable: hidden
+              visibility: hidden
+              replicator_preview: true
+              input_type: text
+              antlers: false
+              hide_display: true
+      -
+        display: 'Donut Details'
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              validate:
+                - required
+              display: Name
+              instructions_position: above
+              listable: true
+              visibility: visible
+              replicator_preview: true
+              input_type: text
+              antlers: false
+              hide_display: false
+              width: 66
+          -
+            handle: type
+            field:
+              options:
+                FILLED: Filled
+                RING: Ring
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              default: RING
+              type: select
+              display: Type
+              icon: select
+              width: 33
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: details
+            field:
+              antlers: false
+              type: textarea
+              display: Details
+              icon: textarea
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: photo_path
+            field:
+              max_files: 1
+              mode: grid
+              container: donuts
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Photo
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: Location
+        fields:
+          -
+            handle: location
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Location
+              icon: text
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: state
+            field:
+              options:
+                ACT: null
+                NSW: null
+                NT: null
+                QLD: null
+                SA: null
+                TAS: null
+                VIC: null
+                WA: null
+              taggable: false
+              push_tags: false
+              multiple: false
+              max_items: 1
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              type: select
+              display: State
+              icon: select
+              width: 33
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: user_id
+            field:
+              max_items: 1
+              mode: default
+              resource: user
+              create: true
+              type: belongs_to
+              display: Member
+              icon: belongs_to
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              instructions_position: above
+              listable: false
+              visibility: hidden
+              replicator_preview: true
+              from: title
+              generate: true
+              show_regenerate: false
+              hide_display: false
+      -
+        display: Ratings
+        fields:
+          -
+            handle: rating_size
+            field:
+              min: 1
+              max: 5
+              step: 1
+              default: 1
+              type: range
+              display: Size
+              icon: range
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: rating_appearance
+            field:
+              min: 1
+              max: 5
+              step: 1
+              default: 1
+              type: range
+              display: Appearance
+              icon: range
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: rating_value
+            field:
+              min: 1
+              max: 5
+              step: 1
+              default: 1
+              type: range
+              display: Value
+              icon: range
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required

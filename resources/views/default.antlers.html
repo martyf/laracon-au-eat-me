@@ -1,0 +1,17 @@
+<header class="pt-32 text-sky-900 font-semibold">
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mb-4">
+        <div class="text-3xl ">
+            {{ title }}
+        </div>
+    </div>
+</header>
+
+{{ if page_builder | count }}
+<div class="py-12">
+    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 space-y-6">
+        {{ page_builder }}
+        {{ partial src="page_builder/{type}" }}
+        {{ /page_builder }}
+    </div>
+</div>
+{{ /if }}

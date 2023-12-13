@@ -1,0 +1,12 @@
+{
+  "resources/css/support.css": {
+    "file": "assets/support-a5b2935f.css",
+    "isEntry": true,
+    "src": "resources/css/support.css"
+  },
+  "resources/js/support.js": {
+    "file": "assets/support-6d43092d.js",
+    "isEntry": true,
+    "src": "resources/js/support.js"
+  }
+}

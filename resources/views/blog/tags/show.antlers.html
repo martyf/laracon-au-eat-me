@@ -1,0 +1,60 @@
+
+{{ partial:default title="Blog posts tagged '{title}'" }}
+
+{{ colours = [
+    'text-sky-500 group-hover:text-sky-700',
+    'text-violet-500 group-hover:text-violet-700',
+    'text-pink-500 group-hover:text-pink-700',
+    'text-amber-500 group-hover:text-amber-700',
+    'text-teal-500 group-hover:text-teal-700'
+] }}
+
+{{ collection:blog as="posts" limit="3" paginate="true" taxonomy:tags="{slug}" on_each_side="2" }}
+
+<div>
+    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 space-y-6 py-12">
+
+        <div class="-mt-7 pb-7">
+            <a href="{{ parent }}"
+               class="text-xs rounded-full bg-white px-4 py-1 transition-colors
+                      hover:bg-pink-500 hover:text-white">View all posts</a>
+        </div>
+
+        <div class="px-6 grid gap-8 sm:px-0 sm:grid-cols-2 md:grid-cols-3">
+
+            {{ posts }}
+                <a href="{{ url }}" class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                    <div class="aspect-[3/2] overflow-hidden">
+                        {{ glide:image w="600" h="400" }}
+                        <img src="{{ url }}" class="transition-all duration-300 transform group-hover:scale-105"
+                             width="{{ width }}"
+                             height="{{ height }}"
+                             alt="{{ title }}">
+                        {{ /glide:image }}
+                    </div>
+                    <div class="px-6 py-4">
+                        <h2 class="font-bold leading-none mb-2 text-2xl transition-colors {{ colours[{ index }] }}">{{ title }}</h2>
+                        <div class="text-sm text-gray-400">{{ date }}</div>
+
+                        <div class="text-xs">By <span class="font-bold">{{ author }}</span></div>
+
+                        <div class="mt-2 space-x-2">
+                            {{ tags }}
+                            <span class="inline-flex border border-pink-300 items-center rounded-full bg-pink-100 px-2 py-0.5 text-xs font-medium text-pink-700">{{ title }}</span>
+                            {{ /tags }}
+                        </div>
+
+                        <div class="mt-2 prose">{{ content | safe_truncate(120, '...') }}</div>
+                    </div>
+                </a>
+            {{ /posts }}
+
+        </div>
+
+        {{ partial:blog/pagination }}
+
+    </div>
+</div>
+
+{{ /collection:blog }}
+

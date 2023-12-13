@@ -1,0 +1,33 @@
+tree:
+  -
+    id: 09359170-6057-4ad1-ac50-44725952cbf6
+    title: Home
+    data:
+      route_name: home
+      colour: bg-amber-500
+  -
+    id: 82d15f98-16c2-4e3c-865b-4eabf86025e4
+    title: 'My Donuts'
+    data:
+      route_name: my-donuts
+      requires_auth: true
+      colour: bg-sky-500
+  -
+    id: 69e5328c-a24b-4d55-9078-7399c50a830b
+    title: Browse
+    data:
+      route_name: donuts
+      colour: bg-teal-500
+  -
+    id: 0db5b792-7fd5-4c43-b7ee-6b47cf65438a
+    title: Favourites
+    data:
+      route_name: my-donuts.favourites
+      requires_auth: true
+      colour: bg-pink-500
+  -
+    id: bdfba19d-f4a6-47f5-a487-6c9e68331cd0
+    entry: fb8ebbbf-f56b-4f92-8442-34eb16bdbe05
+    data:
+      requires_auth: false
+      colour: bg-purple-500

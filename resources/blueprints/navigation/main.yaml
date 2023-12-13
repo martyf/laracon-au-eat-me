@@ -1,0 +1,61 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: route_name
+            field:
+              taggable: true
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              type: laravel_route
+              display: Route
+              icon: select
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              options:
+                a: a
+          -
+            handle: requires_auth
+            field:
+              default: false
+              type: toggle
+              display: 'Requires auth?'
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: colour
+            field:
+              options:
+                bg-amber-500: Amber
+                bg-sky-500: Blue
+                bg-pink-500: Pink
+                bg-purple-500: Purple
+                bg-teal-500: Teal
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              default: bg-amber-500
+              type: select
+              display: Colour
+              icon: select
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false

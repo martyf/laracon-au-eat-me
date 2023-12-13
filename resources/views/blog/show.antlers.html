@@ -1,0 +1,39 @@
+<div class="w-full relative h-[200px] md:h-[300px] overflow-hidden -mb-20">
+    {{ glide:image width="1600" height="600" fit="crop_focal" }}
+    <img src="{{ url }}" class="relative z-10 w-full h-full object-cover">
+    {{ /glide:image }}
+
+    <div class="absolute max-w-5xl inset-x-0 bottom-2 z-20 mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="{{ parent }}"
+           class="text-xs rounded-full bg-white px-4 py-1 transition-colors
+                  hover:bg-pink-500 hover:text-white">View all posts</a>
+    </div>
+</div>
+
+{{ partial:default }}
+
+<div class="max-w-5xl mx-auto sm:px-6 lg:px-8 py-12">
+
+    <div class="-mt-7 px-4 pb-10 sm:px-0">
+
+        <div class="mb-1 flex items-center space-x-2">
+            {{ tags }}
+            <a href="{{ url }}"
+               class="inline-flex border border-pink-300 items-center rounded-full bg-pink-100 px-2 py-0.5 text-xs font-medium text-pink-700
+                      transition-colors
+                      hover:bg-pink-50 hover:border-pink-200">{{ title }}</a>
+            {{ /tags }}
+        </div>
+
+        <div class="text-gray-600">{{ date }}</div>
+        <div class="text-xs">By <span class="font-bold">{{ author }}</span></div>
+
+    </div>
+
+    <div class="p-4 sm:p-8 bg-white shadow sm:rounded-xl">
+        <div class="prose max-w-full">
+            {{ content }}
+        </div>
+    </div>
+</div>
+
